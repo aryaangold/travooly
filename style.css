@@ -1,0 +1,246 @@
+/* Basic Reset & Typography */
+body {
+    font-family: 'Montserrat', sans-serif; /* If you add Google Fonts, uncomment this line */
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #34495e;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: #555;
+    padding: 0 20px;
+}
+
+/* Table Styling */
+.table-container {
+    overflow-x: auto; /* Ensures table is scrollable on small screens */
+    margin-top: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    min-width: 700px; /* Ensures table doesn't get too squashed on smaller screens */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/* Gradient Hover Effect */
+tbody tr:hover {
+    background: linear-gradient(to right, #e0f2f7, #cceeff); /* Light blue gradient */
+    cursor: pointer;
+    transform: scale(1.005);
+    transition: background 0.3s ease, transform 0.2s ease-out;
+}
+
+.rest-day td {
+    background-color: #f2dede; /* Light red for rest days */
+    font-weight: bold;
+    text-align: center;
+    color: #a94442;
+}
+
+/* Data Visualization - Bar Chart */
+.visualization-section {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.pillar-chart {
+    display: flex;
+    align-items: flex-end; /* Bars grow upwards */
+    height: 200px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    gap: 10px; /* Space between bars */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.chart-bar {
+    width: 30px; /* Fixed width for each bar */
+    background-color: #3498db; /* Default color */
+    border-radius: 3px 3px 0 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    transition: height 0.5s ease-out; /* Smooth transition for height */
+}
+
+.chart-bar span {
+    padding-bottom: 5px; /* Adjust text position */
+}
+
+.pillar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.legend-color-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    th, td {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    .pillar-chart {
+        height: 150px;
+        gap: 5px;
+    }
+
+    .chart-bar {
+        width: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .intro-text {
+        font-size: 0.9em;
+    }
+
+    /* Make table cells display as blocks for extreme small screens */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #eee;
+        margin-bottom: 10px;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    td:before {
+        content: attr(data-label); /* Use data-label for mobile headings */
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #34495e;
+    }
+
+    .chart-bar {
+        width: 20px;
+        font-size: 0.7em;
+    }
+}
+
+/* Content Pillar Specific Colors */
+/* Define your colors here. You can add more as needed. */
+.pillar-color-0 { background-color: #3498db; } /* Immigrants Doing Big Tinz */
+.pillar-color-1 { background-color: #2ecc71; } /* 5 Reasons Why / Benefits */
+.pillar-color-2 { background-color: #e74c3c; } /* Visa Struggles */
+.pillar-color-3 { background-color: #f1c40f; } /* Life in the UK */
+.pillar-color-4 { background-color: #9b59b6; } /* Testimonials / Before vs After */
+.pillar-color-5 { background-color: #1abc9c; } /* Immigration Chronicles */
+.pillar-color-6 { background-color: #d35400; } /* UK Immigration */
+.pillar-color-7 { background-color: #34495e; } /* Study Abroad */
+.pillar-color-8 { background-color: #e67e22; } /* Greatest Relocation Regret */
+.pillar-color-9 { background-color: #27ae60; } /* Facts and Myths */
+.pillar-color-10 { background-color: #c0392b; } /* Relocation Routes per Country */
+.pillar-color-11 { background-color: #8e44ad; } /* Benefits of moving to a country */
+/* Add more pillar colors as you add more distinct pillars in your content */
+.pillar-color-12 { background-color: #00bcd4; } /* Community Engagement */
+.pillar-color-13 { background-color: #7f8c8d; } /* Wrap-up */
